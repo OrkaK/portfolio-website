@@ -1,0 +1,196 @@
+/* General Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+
+body {
+height: 100vh;
+background: linear-gradient(135deg, #1a1a1a, #6e48aa);
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+position: relative;
+overflow: hidden;
+}
+
+
+/* Snowflake Animation */
+@keyframes snowfall {
+0% {
+  transform: translateY(0) translateX(0);
+}
+100% {
+   transform: translateY(100vh) translateX(calc(-50vw + 50px)); /* Slight horizontal drift */
+}
+}
+
+
+.snowflake {
+position: fixed;
+top: -10%;
+font-size: 1.2em;
+color: rgba(255, 255, 255, 0.8);
+text-shadow: 0 0 5px #000;
+animation: snowfall 10s linear infinite;
+user-select: none;
+z-index: -1;
+}
+
+
+.snowflake:nth-child(odd) {
+animation-duration: 12s;
+}
+
+
+.snowflake:nth-child(even) {
+animation-duration: 15s;
+animation-direction: alternate;
+}
+
+
+/* Cherry Blossoms */
+.snowman {
+position: absolute;
+font-size: 80px;
+ color: rgba(255, 255, 255, 0.3); /* Keeping the same transparency as flowers */
+user-select: none;
+z-index: -1;
+}
+
+
+.snowman.top-left {
+top: 10%;
+left: 5%;
+}
+
+
+.snowman.bottom-right {
+bottom: 10%;
+right: 5%;
+}
+
+
+/* Tabs and Content Styling */
+.container {
+background: #1f1f1f;
+color: #fff;
+max-width: 1000px;
+width: 90%;
+padding: 40px;
+border-radius: 15px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+text-align: center;
+animation: fadeIn 1s ease-in-out;
+}
+
+
+.topic {
+font-size: 36px;
+font-weight: 600;
+margin-bottom: 20px;
+color: #c770f0;
+text-align: center;
+}
+
+
+.list {
+display: flex;
+justify-content: space-around;
+margin-bottom: 30px;
+}
+
+
+.tab {
+cursor: pointer;
+font-size: 16px;
+font-weight: 500;
+color: #ddd;
+transition: color 0.3s ease;
+}
+
+
+.tab:hover {
+color: #c770f0;
+}
+
+
+.text-content {
+text-align: left;
+}
+
+
+.text-content h2 {
+font-size: 28px;
+color: #c770f0;
+margin-bottom: 10px;
+}
+
+
+.text-content p,
+.text-content ul {
+font-size: 16px;
+line-height: 1.6;
+}
+
+
+.text-content a {
+color: #c770f0;
+text-decoration: none;
+font-weight: 500;
+}
+
+
+.text-content a:hover {
+text-decoration: underline;
+}
+
+
+input[type="radio"] {
+display: none;
+}
+
+
+.text {
+display: none;
+}
+
+
+#home:checked ~ .text-content .home,
+#portfolio:checked ~ .text-content .portfolio,
+#samples:checked ~ .text-content .samples,
+#instructions:checked ~ .text-content .instructions {
+display: block;
+}
+
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+.verse {
+  position: fixed;
+  bottom: 7%; /* Vertical position */
+  left: 50%; /* Horizontal centering */
+  transform: translateX(-50%);
+  color: white; /* Text color */
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  max-width: 80%; /* Limits text width */
+  line-height: 1.6;
+  opacity: 0.9; /* Slight transparency */
+}

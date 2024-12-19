@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- FontAwesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Snowflakes will be dynamically added by JavaScript -->
+
+  <!-- Cherry Blossoms -->
+  <div class="snowman top-left">&#9731;</div>
+  <div class="snowman bottom-right">&#9731;</div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="topic">Portfolio</div>
+
+    <!-- Navigation Tabs -->
+    <div class="content">
+      <input type="radio" name="slider" checked id="home" />
+      <input type="radio" name="slider" id="portfolio" />
+      <input type="radio" name="slider" id="samples" />
+      <input type="radio" name="slider" id="instructions" />
+
+      <div class="list">
+        <label for="home" class="tab">
+          <i class="fas fa-home"></i> <span>Home</span>
+        </label>
+        <label for="portfolio" class="tab">
+          <i class="far fa-file"></i> <span>Portfolio</span>
+        </label>
+        <label for="samples" class="tab">
+          <i class="far fa-envelope"></i> <span>Correspondence Samples</span>
+        </label>
+        <label for="instructions" class="tab">
+          <i class="fas fa-book"></i> <span>Instruction Samples</span>
+        </label>
+      </div>
+
+      <!-- Page Content -->
+      <div class="text-content">
+        <!-- Home -->
+        <div class="home text">
+          <h2>Welcome!</h2>
+          <p>
+            Hello! I'm Orka Kalds, a Computer Science Major. And in this website, you can explore my work from my English class, including my resume, cover letter, and instructional projects.
+          </p>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="portfolio text">
+          <h2>Portfolio</h2>
+          <ul>
+            <li>
+              <a href="assets/Resume.png" target="_blank">Resume</a>
+            </li>
+            <li>
+              <a href="assets/Cover Letter.pdf" target="_blank">Cover Letter</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Correspondence Samples -->
+        <div class="samples text">
+          <h2>Correspondence Samples</h2>
+          <ul>
+            <li>
+              <a href="assets/annotated-Email.docx (1).pdf" target="_blank">Email</a>
+            </li>
+            <li>
+              <a
+                href="https://www.canva.com/design/DAGT9pYxT_s/XAZn3fkcMN_qQiC9aToo2A/view"
+                target="_blank"
+                >Infographic</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Instruction Samples -->
+        <div class="instructions text">
+          <h2>Instruction Samples</h2>
+          <ul>
+            <li>
+              <a href="assets/Instruction Set.pdf" target="_blank">Instruction Set</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/watch?v=aI-gkMJBqQk" target="_blank"
+                >Tutorial Video</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verse at the bottom -->
+  <div class="verse">
+    <p>Romans 5:3-5</p>
+    <p>
+      <em>"Not only so, but we also glory in our sufferings, because we know that
+      suffering produces perseverance; perseverance, character; and character,
+      hope. And hope does not put us to shame, because God’s love has been
+      poured out into our hearts through the Holy Spirit, who has been given to
+      us."</em>
+    </p>
+  </div>
+
+  <script>
+    // JavaScript for creating snowflakes dynamically
+    const snowflakeCount = 50; // Adjust the number of snowflakes
+    const body = document.body;
+
+    for (let i = 0; i < snowflakeCount; i++) {
+      const snowflake = document.createElement("div");
+      snowflake.className = "snowflake";
+      snowflake.textContent = "❅";
+      snowflake.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+      snowflake.style.animationDuration = Math.random() * 5 + 10 + "s"; // Random duration
+      snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // Random size
+      body.appendChild(snowflake);
+    }
+  </script>
+</body>
+</html>
